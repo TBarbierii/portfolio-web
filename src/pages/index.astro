@@ -1,0 +1,113 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Badge from '../components/Badge.astro';
+import SocialPill from '../components/SocialPill.astro';
+import Experience from '../components/Experience.astro';
+import SectionConatiner from '../components/SectionContainer.astro';
+import Projects from '../components/Projects.astro';
+import Studies from '../components/Studies.astro';
+import Stack from '../components/Stack.astro';
+
+import LinkedInIcon from '../components/icons/LinkedInIcon.astro';
+import GitHubIcon from '../components/icons/GitHubIcon.astro';
+import MailIcon from '../components/icons/MailIcon.astro';
+import BriefcaseIcon from '../components/icons/BriefcaseIcon.astro';
+import ProjectIcon from '../components/icons/ProjectIcon.astro';
+import CVIcon from '../components/icons/CVIcon.astro';
+import StudyIcon from '../components/icons/StudyIcon.astro';
+import StackIcon from '../components/icons/StackIcon.astro';
+---
+
+<Layout title="Tomas Barbieri - Desarrollador y Programador Junior">
+	<main class="py-20 mx-auto">
+		<section class="py-7 mx-auto lg:w-[800px] w-11/12">
+			<div class="flex justify-center mb-10">
+				<img class="rounded-full size-32 lg:size-52 border-purple-600 border-2 shadow-2xl shadow-white/30" src="photo.webp" title="Tomás Barbieri"/>
+			</div>
+			<h1 class="text-white text-3xl lg:text-5xl md:text-4xl font-bold flex justify-center pb-4 flex-wrap">
+				Hola, soy <span class="text-purple-500 ml-2">Tomás Barbieri</span> 
+				<div class="flex justify-center items-center pl-4 mt-2">
+					<Badge>Open to Work</Badge>	
+				</div>
+			</h1>
+			<h2 class="text-2xl lg:text-3xl flex justify-center text-center mt-3">
+				Junior Full Stack Developer
+			</h2>
+			<h3 class="text-center text-xl lg:text-3xl italic flex justify-center text-purple-500">
+				Estudiante de Ingeniería en Sistemas de Información
+			</h3>
+			<div class="flex flex-wrap md:h-[100px] md:w-[740px] m-10 pb-5 md:pb-40">
+				<p class="text-xl text-pretty">
+					Entusiasta por la <strong class="text-purple-300">tecnología y el desarrollo de software</strong>, como asi tambien por la <strong class="text-purple-300">ciberseguridad</strong>. Me gusta aprender y enfrentar nuevos desafíos. 
+					Me considero una persona <strong class="text-green-300">responsable</strong>, <strong class="text-green-300">proactiva</strong> y con <strong class="text-green-300">capacidad para trabajar en equipo</strong>, 
+					asi como también para afrontar desafios individuales.
+					Vivo en <strong class="text-cyan-200">Buenos Aires, Argentina.</strong>
+					<img class="inline-block size-6 mb-1" src="/ar.webp" alt="Argentina"/> 
+				</p>
+			</div>
+			<nav class="md:flex grid justify-items-center gap-2 mt-5 md:justify-center flex-wrap">
+				<SocialPill href="https://www.linkedin.com/in/tom%C3%A1s-barbieri-bedini-b3b9261b8/">
+					<LinkedInIcon class="size-4 md:size-6"/>
+					LinkedIn
+				</SocialPill>
+				<SocialPill href="https://github.com/TBarbierii">
+					<GitHubIcon class="size-4 md:size-6"/>
+					GitHub
+				</SocialPill>
+				<SocialPill href="mailto:tomasbarbieribedini@gmail.com">
+					<MailIcon class="size-4 md:size-6"/>
+					Gmail
+				</SocialPill>
+				<SocialPill href="/TOMAS_BARBIERI-CV.pdf">
+					<CVIcon class="size-4 md:size-6"/>
+					CV
+				</SocialPill>
+			</nav>
+		</section>
+		<SectionConatiner id="experience">
+			<h2 class="text-2xl sm:text-4xl font-semibold mb-6 flex gap-x-2 items-center">
+				<BriefcaseIcon class="size-8"/>
+				Experiencia Laboral
+			</h2>
+			<Experience />
+		</SectionConatiner>	
+		<SectionConatiner id="studies">
+			<h2 class="text-2xl sm:text-4xl font-semibold mb-6 flex gap-x-2 items-center">
+				<StudyIcon class="size-8"/>
+				Estudios
+			</h2>
+			<Studies/>
+		</SectionConatiner>	
+		<SectionConatiner id="technologies">
+			<h2 class="text-2xl sm:text-4xl font-semibold mb-6 flex gap-x-2 items-center">
+				<StackIcon class="size-8"/>
+				Tecnologías
+			</h2>
+			<Stack/>
+		</SectionConatiner>
+		<SectionConatiner id="projects">
+			<h2 class="text-2xl sm:text-4xl font-semibold mb-6 flex gap-x-2 items-center">
+				<ProjectIcon class="size-8"/>
+				Proyectos
+			</h2>
+			<Projects />
+		</SectionConatiner>	
+	</main>
+</Layout>
+
+<style>
+
+	@media screen and (max-width: 700px){
+		.tittle{
+			display: block;
+			padding-bottom: 10px;
+		}
+
+		.badge{
+			width: fit-content;
+			margin-top: 1rem;
+		}
+	}
+
+</style>

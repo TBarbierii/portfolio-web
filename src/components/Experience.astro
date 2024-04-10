@@ -1,0 +1,24 @@
+---
+import ExperienceItem from './ExperienceItem.astro'
+
+const EXPERIENCE = [
+    {
+        date: 'Proximamente',
+        title: 'Actualmente no cuento con experiencia laboral',
+        description: "Estoy en busca de mi primer empleo con muchas ganas de adquirir nuevos conocimientos y desafios para crecer y desarrollarme profesionalmente. Si estas interesado en mi perfil, no dudes en contactarme!",
+        link: ''
+    }
+]
+---
+<ol class="relative border-s border-gray-200 ml-3.5">                  
+    {
+        EXPERIENCE.map(experience => (
+            <li class="mb-10 ms-4">
+                <ExperienceItem {...experience}/>
+            </li>
+            
+        ))
+    }
+</ol>
+
+

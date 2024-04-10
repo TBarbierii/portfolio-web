@@ -1,0 +1,25 @@
+---
+import StudiesItem from './StudiesItem.astro'
+
+const STUDIES = [
+    {
+        date: '2019 - Presente',
+        title: 'Universidad Tecnológica Nacional - FRBA',
+        description: 'Ingeniería en Sistemas de Información'
+    },
+    {
+        date: '2013 - 2017',
+        title: 'Instituto San José de Salto',
+        description: 'Bachiller en Economía y Administración'
+    }
+]
+---
+<ol class="relative border-s border-gray-200 ml-3.5">                  
+    {
+        STUDIES.map(studies => (
+            <li class="mb-10 ms-4">
+                <StudiesItem {...studies}/>
+            </li>
+        ))
+    }
+</ol>

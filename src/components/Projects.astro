@@ -1,0 +1,51 @@
+---
+import TailwindIcon from './icons/Stack/TailwindIcon.astro';
+import HtmlIcon from './icons/Stack/HtmlIcon.astro';
+
+const TAGS = {
+    TAILWIND: {
+        name: "Tailwind CSS",
+        class: "bg-[#003159] text-[#73bcf7]",
+        icon : TailwindIcon
+    },
+    HTML: {
+        name: "HTML",
+        class: "bg-[#8B4000]/60 text-[#e34c26]",
+        icon : HtmlIcon
+    },
+}
+
+const PROJECTS = [
+    {
+        title: "Por el momento no cuento con proyectos personales realizados 🥲",
+        description: "Proximamente los iré agregando! 😊",
+        link: '#',
+        github: '#',
+        image: "/projects/projects.webp",
+        tags: []
+    }
+]
+
+---
+
+{
+    PROJECTS.map(({title, description, image, tags}) => (
+        <article>
+            <h3 class="text-xl sm:text-2xl font-semibold text-purple-400 mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <ul class="flex justify-center gap-x-2 flex-row mb-3">
+                {tags.map((tag) => (
+                    <li>
+                        <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
+                            <tag.icon class="size-4"/>
+                            {tag.name}
+                        </span>
+                    </li>
+                ))}
+            </ul>
+            <div class="lg:grid grid-cols-2 lg:grid-cols-1 flex flex-col gap-12 place-items-center justify-center items-center p-12">
+                <img class="hover:scale-105 transition-transform rounded-2xl lg:h-[180px] lg:w-[340px] shadow-xl shadow-white/10" src={image} alt={`Captura de pantalla del proyecto ${image}`} />
+            </div>   
+        </article>
+    ))
+}
