@@ -9,37 +9,56 @@ import MailHeaderIcon from "./icons/MailHeaderIcon.astro";
 
 <header class="flex justify-center items-center py-3 mx-auto">
     <nav class="bg-neutral-900 fixed sm:w-[570px] z-20 top-5 rounded-full w-11/12">
-        <div class="pl-4 p-2 max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
+        <div class="navbar pl-4 p-2 max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
             <div class="toggle">
                 |||
             </div>
             <div class="links pl-4 py-2 items-center justify-between hidden md:flex md:flex-col md:order-1" id="navbar-sticky">
-                <ul class="w-full pb-3 gap-y-5 flex sm:flex-row flex-col md:p-0 mt-4 font-semibold md:space-x-3 rtl:space-x-reverse md:mt-0">
-                    <li class="link hover:scale-105 transition-transform ease-in">
+                <div class="w-full pb-3 gap-y-5 flex sm:flex-row flex-col md:p-0 mt-4 font-semibold md:space-x-3 rtl:space-x-reverse md:mt-0">
+                    <a class="hover:text-violet-400 link hover:scale-105 transition-transform ease-in" href="#top">
                         <AboutIcon class="icon w-6 h-6 hidden" />
-                        <a class="hover:text-violet-400" href="#top">Sobre mi</a>
-                    </li>
-                    <li class="link hover:scale-105 transition-transform ease-in">
+                        Sobre mi
+                    </a>
+                    <a class="hover:text-violet-400 link hover:scale-105 transition-transform ease-in" href="#experience">
                         <BriefcaseIcon class="icon w-6 h-6 hidden" />
-                        <a class="hover:text-violet-400" href="#experience">Experiencia</a>
-                    </li>
-                    <li class="link hover:scale-105 transition-transform ease-in">
+                        Experiencia
+                    </a>
+                    <a class="hover:text-violet-400 link hover:scale-105 transition-transform ease-in" href="#studies">
                         <StudyIcon class="icon w-6 h-6 hidden" />
-                        <a class="hover:text-violet-400" href="#studies">Estudios</a>
-                    </li>
-                    <li class="link hover:scale-105 transition-transform ease-in">
+                        Estudios
+                    </a>
+                    <a class="hover:text-violet-400 link hover:scale-105 transition-transform ease-in" href="#technologies">
                         <StackIcon class="icon w-6 h-6 hidden" />
-                        <a class="hover:text-violet-400" href="#technologies">Tecnologias</a>
-                    </li>
-                    <li class="link hover:scale-105 transition-transform ease-in">
+                        Tecnologias
+                    </a>
+                    <a class="hover:text-violet-400 link hover:scale-105 transition-transform ease-in" href="#projects">
                         <ProjectIcon class="icon w-6 h-6 hidden" />
-                        <a class="hover:text-violet-400" href="#projects">Proyectos</a>
+                        Proyectos
+                    </a>
+                    <a class="hover:text-violet-400 link hover:scale-105 transition-transform ease-in" href="mailto:tomasbarbieribedini@gmail.com">
+                        <MailHeaderIcon class="icon w-6 h-6 hidden" />
+                        Contacto
+                    </a>
+                </div>
+                <!-- <ul class="w-full pb-3 gap-y-5 flex sm:flex-row flex-col md:p-0 mt-4 font-semibold md:space-x-3 rtl:space-x-reverse md:mt-0">
+                    <li class="link hover:scale-105 transition-transform ease-in w-full">
                     </li>
                     <li class="link hover:scale-105 transition-transform ease-in">
-                        <MailHeaderIcon class="icon w-6 h-6 hidden" />
-                        <a class="hover:text-violet-400" href="mailto:tomasbarbieribedini@gmail.com">Contacto</a>
+                        
                     </li>
-                </ul>
+                    <li class="link hover:scale-105 transition-transform ease-in">
+                        
+                    </li>
+                    <li class="link hover:scale-105 transition-transform ease-in">
+                    
+                    </li>
+                    <li class="link hover:scale-105 transition-transform ease-in">
+                        
+                    </li>
+                    <li class="link hover:scale-105 transition-transform ease-in">
+
+                    </li>
+                </ul> -->
             </div>
         </div>
     </nav>
@@ -47,6 +66,12 @@ import MailHeaderIcon from "./icons/MailHeaderIcon.astro";
     
 
 <style>
+    .navbar {
+        border: 1px solid #3f0086;
+        /* backdrop-filter: blur(20px); */
+        border-radius: 9999px;
+    }	
+
     .links .link a{
         transition: 0.3s;
     }
@@ -69,6 +94,12 @@ import MailHeaderIcon from "./icons/MailHeaderIcon.astro";
 
     @media screen and (max-width: 768px) {
         
+        .navbar {
+            border: 1px solid #3f0086;
+            /* backdrop-filter: blur(20px); */
+            border-radius: 9999px;
+        }	
+
         .toggle {
             display: inline-block;
         }
@@ -122,10 +153,24 @@ import MailHeaderIcon from "./icons/MailHeaderIcon.astro";
 <script>
     const toggle = document.querySelector('.toggle');
     const links = document.querySelector('.links');
+    const main = document.querySelector('.main');
+
     if (toggle && links) {
         toggle.addEventListener('click', () => {
             toggle.classList.toggle('rotate');
             links.classList.toggle('active');
     });
     }
+
+    links?.addEventListener('click', () => {
+        toggle?.classList.remove('rotate');
+        links.classList.remove('active');
+    });
+
+    main?.addEventListener('click', () => {
+        toggle?.classList.remove('rotate');
+        links?.classList.remove('active');
+        main.classList.remove('active');
+    });
+
 </script>
